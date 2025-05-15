@@ -1,14 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>숭실 LLM 챗봇</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2gether</title>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .chat-container {
+      background-color: #2d2d2d;
+      border-radius: 12px;
+      padding: 20px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #61dafb;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      background-color: #3a3a3a;
+      color: white;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      background-color: #61dafb;
+      border: none;
+      border-radius: 8px;
+      color: black;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #21a1f1;
+    }
+    #response {
+      margin-top: 1rem;
+      background-color: #3c3c3c;
+      padding: 10px;
+      border-radius: 8px;
+      min-height: 40px;
+    }
+  </style>
 </head>
 <body>
-  <h1>숭실대학교 LLM 챗봇</h1>
-  <input type="text" id="userInput" placeholder="질문을 입력하세요" style="width: 300px;">
-  <button onclick="send()">전송</button>
-  <p id="response" style="margin-top: 20px; font-weight: bold;"></p>
+  <div class="chat-container">
+    <h1>❁ 2gether</h1>
+    <input type="text" id="userInput" placeholder="질문을 입력하세요">
+    <button onclick="send()">전송</button>
+    <div id="response"></div>
+  </div>
 
   <script>
     async function send() {
