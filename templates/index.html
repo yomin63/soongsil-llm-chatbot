@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>숭실 LLM 챗봇</title>
+</head>
+<body>
+  <h1>숭실대학교 LLM 챗봇</h1>
+  <input type="text" id="userInput" placeholder="질문을 입력하세요" style="width: 300px;">
+  <button onclick="send()">전송</button>
+  <p id="response" style="margin-top: 20px; font-weight: bold;"></p>
+
+  <script>
+    async function send() {
+      const msg = document.getElementById('userInput').value;
+      const res = await fetch('/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: msg })
+      });
+      const data = await res.json();
+      document.getElementById('response').innerText = data.response;
+    }
+  </script>
+</body>
+</html>
